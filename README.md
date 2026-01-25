@@ -94,3 +94,24 @@ Buys an item.
 -   `200 OK`: `{ "status": "queued" }` (Success)
 -   `409 Conflict`: `{ "error": "Stock problem" }` (Sold out)
 -   `429 Too Many Requests`: `{ "error": "Too many requests" }`
+
+### GET /purchase/orders/:userId
+Check order status.
+**Response**
+```json
+[ { "id": 1, "status": "CONFIRMED", "quantity": 1 } ]
+```
+
+### GET /purchase/metrics
+System Health.
+**Response**
+```json
+{ "stock_remaining": 45, "queue_depth": 0, "total_processed": 55 }
+```
+
+### POST /products/restock
+Admin restock.
+**Body**
+```json
+{ "productId": 1, "amount": 50 }
+```

@@ -45,11 +45,22 @@ async function setIdempotency(key, val) {
   await redis.set(`idempotency:${key}`, val, 'EX', 86400);
 }
 
+async function restockProduct(productId, amount) {
+  const key = `product:${productId}:stock`;
+  return await redis.incrby(key, amount);
+}
+
+async function getProductStock(productId) {
+  return await redis.get(`product:${productId}:stock`);
+}
+
 module.exports = {
   redis,
   claimStock,
   setProductStock,
   checkRateLimit,
   checkIdempotency,
-  setIdempotency
+  setIdempotency,
+  restockProduct,
+  getProductStock
 };
