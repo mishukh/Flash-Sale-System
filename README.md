@@ -40,7 +40,7 @@ npm install
 ```
 
 **2. Configure**
-Rename `.env.template` to `.env` and add your Redis/Postgres URLs.
+In  `.env` and add your Redis/Postgres URLs.
 
 **3. Initialize DB**
 ```bash
