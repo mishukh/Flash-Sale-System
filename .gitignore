@@ -1,19 +1,19 @@
 
-# Dependencies
+
 node_modules
 npm-debug.log
 
-# Environment Variables (Security)
+
 .env
 .env.template
 
-# Prisma
+
 /generated/prisma
 
-# OS Files
+
 .DS_Store
 Thumbs.db
 
-# Editor
+
 .vscode
 .idea
